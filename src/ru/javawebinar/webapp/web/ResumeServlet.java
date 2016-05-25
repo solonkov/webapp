@@ -64,7 +64,7 @@ public class ResumeServlet extends HttpServlet {
         String about = request.getParameter("about");
 
         final Resume r;
-        if (uuid == null) {
+        if (uuid == null || uuid.isEmpty()) {
             r = new Resume(name, about);
         } else {
             r = storage.get(uuid);
@@ -91,7 +91,7 @@ public class ResumeServlet extends HttpServlet {
                 r.addSection(type, type == SectionType.OBJECTIVE ? new TextSection(value) : new ListSection(value.split("\\n")));
             }
         }
-        if (uuid == null) {
+        if (uuid == null || uuid.isEmpty()) {
             storage.save(r);
         } else {
             storage.update(r);
