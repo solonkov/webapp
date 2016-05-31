@@ -16,6 +16,6 @@ public class Main {
 //        link.setUrl("ulr2");
 //        System.out.println(link.toString());
 //        System.out.println(link.getName());
-
+        System.out.println("Hello!");
     }
 }
